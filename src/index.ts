@@ -1,5 +1,6 @@
 import express from 'express';
 import authRoutes from './routes/auth';
+import productRoutes from './routes/product';
 import mongoose from 'mongoose';
 
 const app = express();
@@ -19,4 +20,5 @@ app.use(express.urlencoded({ extended: true }));
 
 // Register the authentication routes with the app
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 app.listen(PORT, callbackServer);
