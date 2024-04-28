@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import authRoutes from './routes/auth';
 import productRoutes from './routes/product';
 import mongoose from 'mongoose';
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 	res.send('Hello Vida!');
 });
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 // Register the authentication routes with the app
